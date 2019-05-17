@@ -213,7 +213,7 @@ window.onload = function(){
 
 	//loader
 
-	$(".loader_container").fadeIn(1000).delay(5000).fadeOut( 1000 , function(){
+	$(".loader_container").fadeIn(1000).fadeOut( 1000 , function(){
 
 		$(this).remove();
 
