@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- tab icon -->
+    <link rel="icon" href="images/tab_icon.png">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- fullScreen css -->
+    <link rel="stylesheet" href="css/full-screen-helper.css">
+    <!-- datepicker css -->
+    <link href="assests/datepicker/jquery.datepicker2.css" rel="stylesheet">
+    <!-- timepicker css -->
+    <link href="assests/timepicker/mdtimepicker.min.css" rel="stylesheet">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <title>فتح طلب تقييم</title>
+</head>
+<body>
+
+<!-- overlay back Div -->
+<div class="overlay"></div>
+
+<!-- Header -->
+<header>
+
+    <button class="new_header_sm_screen">
+        <svg x="0px" y="0px"viewBox="0 0 511 511" style="enable-background:new 0 0 511 511;" xml:space="preserve">
+            <path d="M483.3,179.1c-5.2-5.2-11.3-9.4-17.8-12.3l26.7-27.2c11.4-11.3,17.7-26.3,17.8-42.3c0.1-16.1-6.2-31.2-17.5-42.6l-9.1-9.1
+                c-11.4-11.4-26.5-17.6-42.7-17.5c-16.1,0.1-31.2,6.5-42.5,18c0,0-0.1,0.1-0.1,0.1L253.9,195.8L111,49.9C99.8,38.5,84.8,32.1,68.8,32
+                c-16-0.1-31.1,6-42.5,17.2l-9.4,9.3C5.3,69.9-1,85.1-1,101.3c0,16.2,6.4,31.3,18,42.6l24.9,24.8c-5.7,2.8-10.9,6.5-15.6,11.1
+                l-9.4,9.3C5.3,200.5-1,215.7-1,231.9s6.4,31.4,18,42.7l195.9,192.1c11.3,11,26.1,17,41.8,17h0.1c15.8,0,30.6-6.1,41.9-17.2
+                c0.1-0.1,0.2-0.2,0.2-0.2l58.6-59.4c7.7-7.9,7.6-20.5-0.2-28.2c-7.9-7.7-20.5-7.6-28.2,0.2l-58.4,59.3c-7.7,7.5-20.2,7.4-27.8,0
+                L44.9,246.1c-3.9-3.8-6-8.8-6-14.2s2.1-10.5,6-14.3l9.4-9.3c3.8-3.7,8.8-5.8,14.2-5.7c3.7,0,7.3,1.1,10.3,3l134,133.5l0.1,0.1
+                c11,10.8,25.7,16.8,41.4,16.9h0.5c15.9,0,30.8-6,41.9-17c0.1-0.1,0.2-0.2,0.3-0.3l125.4-128c1.5-0.9,3-2,4.3-3.3
+                c3.8-3.8,8.8-6,14.2-6c5.4,0,10.4,2,14.2,5.8l9.1,9.1c3.8,3.8,5.9,8.8,5.8,14.2c0,5.4-2.1,10.4-6,14.2l-64.9,64
+                c-7.8,7.7-7.9,20.4-0.2,28.2c3.9,4,9.1,5.9,14.2,5.9c5.1,0,10.1-1.9,14-5.8l64.9-64c11.5-11.3,17.9-26.4,17.9-42.5
+                s-6.2-31.2-17.5-42.6L483.3,179.1z M268.7,310.7c-3.7,3.6-8.6,5.5-14,5.5c-5.3,0-10.1-2-13.7-5.5L113.7,184
+                c-0.8-1.2-1.7-2.4-2.7-3.5c-2.1-2.1-4.2-4-6.5-5.7l-59.4-59.1c0,0-0.1-0.1-0.1-0.1c-3.9-3.8-6-8.8-6-14.2c0-5.4,2.1-10.5,6-14.3
+                l9.4-9.3c3.8-3.7,8.8-5.8,14.2-5.7c5.3,0,10.3,2.2,14,5.9l157.2,160.5c3.8,3.9,9,6,14.3,6c5.4,0,10.5-2.2,14.3-6.1L426.8,73.8
+                c3.8-3.8,8.8-5.9,14.1-5.9c5.4,0,10.4,2,14.2,5.8l9.1,9.1c3.8,3.8,5.9,8.8,5.8,14.2c0,5.4-2.1,10.4-6,14.2c-0.1,0.1-0.2,0.2-0.3,0.3
+                L268.7,310.7z"/>
+        </svg>
+    </button>
+
+    <div class="logo">
+        <a href="#">
+            <svg version="1.1" id="Layer_1"x="0px" y="0px" viewBox="0 0 59 12.5" style="enable-background:new 0 0 59 12.5;" xml:space="preserve">
+                <g transform="translate(0.000000,1606.000000) scale(0.100000,-0.100000)">
+                    <path d="M298.5,15998.4v-46.1h9.1h9.1v22.1c0,12.3,0.1,22.1,0.2,22c0.1,0,9.7-10,21.4-22.1l21.3-22.1h11.3c6.6,0,11.3,0,11.3,0.2c-0.1,0.2-23.7,24.6-38.8,40.1l-5.2,5.3l21.2,22.3c11.7,12.3,21.7,22.8,22.2,23.3l1,1h-10.4h-10.4l-22.6-23.7l-22.5-23.8l-0.1,23.8l-0.1,23.8h-9.1h-9.1v-46.1H298.5z"/>
+                    <path d="M61.5,16042.2c-7.9-20.8-33.7-89.1-33.8-89.3c-0.1-0.3,0.4-0.3,9.5-0.3h9.6l3.7,10.4c2,5.7,3.7,10.4,3.7,10.4s8,0,17.7,0c14.1,0,17.7,0,17.7,0.2c-0.1,0.1-1.3,3.5-2.9,7.5c-1.5,4-2.8,7.4-2.9,7.6c-0.1,0.3-0.9,0.3-12.1,0.3h-12l5.8,16.3l5.8,16.3l-4.3,11.3c-2.7,7.2-4.4,11.3-4.5,11.3C62.4,16044.4,62.1,16043.8,61.5,16042.2z"/>
+                    <path d="M490.5,15998.5v-45.8h8.7h8.7v30.1c0,26.4,0.1,30,0.3,29.7c0.2-0.2,8.6-13.7,18.7-30.1l18.5-29.7h9.4h9.4v45.8v45.8h-8.7h-8.7l-0.1-30.6l-0.1-30.6l-18.9,30.6l-18.9,30.6h-9.1h-9.1L490.5,15998.5L490.5,15998.5z"/>
+                    <path d="M109.8,15998.4v-45.8h8.4h8.4l0.1,35.8l0.1,35.8l8.7-35.6c4.8-19.6,8.7-35.7,8.7-35.8c0.1-0.2,2-0.2,8.8-0.2h8.7l8.8,35.8l8.8,35.8l0.1-33.5c0.1-18.4,0.1-34.6,0.2-35.8v-2.3h8.3h8.3v45.8v45.8h-13.6c-13.2,0-13.6,0-13.7-0.3c-0.1-0.2-3.6-14.1-7.9-31c-4.3-16.9-7.8-30.7-7.8-30.8c-0.1,0-0.2,0.2-0.3,0.6c-1.6,6.1-15.7,61.4-15.7,61.5s-6.1,0.1-13.6,0.1H110L109.8,15998.4L109.8,15998.4z"/>
+                    <path d="M233.5,15998.6c-9.5-25.1-17.3-45.7-17.4-45.8c-0.1-0.2,1.9-0.2,9.5-0.2h9.6l3.7,10.4l3.7,10.4h17.7H278l-0.1,0.4c-0.1,0.2-1.4,3.7-2.9,7.7l-2.8,7.4h-12c-11.3,0-12,0-12,0.3c0.1,0.2,2.7,7.5,5.8,16.3c3.5,9.7,5.7,16.1,5.6,16.3s-2,5.3-4.3,11.3c-3.2,8.4-4.2,11-4.4,11C250.8,16044.2,246.9,16034,233.5,15998.6z"/>
+                    <path d="M402.5,15998.4v-45.8h33.9h33.9v7.8v7.8h-24.8h-24.8v12.4v12.4h24.8h24.8v7.8v7.8h-24.8h-24.8v10.2v10.2h24.8h24.8v7.7v7.7h-33.9h-33.9V15998.4z"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+
+    <div class="right_header">
+        
+        <div class="iconss">
+            <ul>
+                <li>
+                    <svg class="nav_toggler" x="0px" y="0px" viewBox="0 0 24 20" style="enable-background:new 0 0 24 20;" xml:space="preserve">
+                        <g>
+                            <path d="M24,1c0-0.6-0.4-1-1-1H1C0.4,0,0,0.4,0,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V1z"/>
+                            <path d="M24,9c0-0.6-0.4-1-1-1H1C0.4,8,0,8.4,0,9v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V9z"/>
+                            <path d="M24,17c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V17z"/>
+                        </g>
+                    </svg>
+                </li>
+                <li class="hidden-767px">
+                    <svg class="fullscreen" x="0px" y="0px" viewBox="0 0 357 357" style="enable-background:new 0 0 357 357;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M51,229.5H0V357h127.5v-51H51V229.5z M0,127.5h51V51h76.5V0H0V127.5z M306,306h-76.5v51H357V229.5h-51V306z M229.5,0v51H306v76.5h51V0H229.5z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    
+    <div class="left_header">
+        
+        <div class="dropdowns">
+            <ul>
+                <li>
+                    <span class="drop_down_toggler">الاقسام</span>
+                    <div class="drop_down_div">
+                        <a href="">قسم رقم 1</a>
+                        <a href="">قسم رقم 2</a>
+                        <a href="">قسم رقم 3</a>
+                        <a href="">قسم رقم 4</a>
+                        <a href="">قسم رقم 5</a>
+                        <a href="">قسم رقم 61</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="notification">
+            
+            <div class="notifi_icon">
+                <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M467.8,431.9l-36.6-61.1c-16.9-28.2-25.9-60.5-25.9-93.3V224c0-67.5-45.1-124.6-106.7-143V42.7
+                                C298.7,19.1,279.5,0,256,0s-42.7,19.1-42.7,42.7V81c-61.6,18.4-106.7,75.5-106.7,143v53.5c0,32.9-8.9,65.1-25.8,93.3l-36.6,61.1
+                                c-2,3.3-2,7.4-0.1,10.8c1.9,3.3,5.4,5.4,9.3,5.4h405.3c3.8,0,7.4-2.1,9.3-5.4C469.8,439.3,469.8,435.1,467.8,431.9z"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M188.8,469.3c12,25.1,37.5,42.7,67.2,42.7s55.1-17.5,67.2-42.7H188.8z"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <ul class="notifi_list">
+                <li>
+                    <span>الاشعارات</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g id="Reply">
+                                    <g>
+                                        <path d="M224,128V0L0,192l224,160V224c203.8,0,288,288,288,288C512,117.2,224,128,224,128z"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        تلقيت رسالة من محمد احمد السيد
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g id="Reply">
+                                    <g>
+                                        <path d="M224,128V0L0,192l224,160V224c203.8,0,288,288,288,288C512,117.2,224,128,224,128z"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        يوجد اعطال في صفحة الموظفين
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g id="Reply">
+                                    <g>
+                                        <path d="M224,128V0L0,192l224,160V224c203.8,0,288,288,288,288C512,117.2,224,128,224,128z"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        اخطاء فنية
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g id="Reply">
+                                    <g>
+                                        <path d="M224,128V0L0,192l224,160V224c203.8,0,288,288,288,288C512,117.2,224,128,224,128z"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        تقييم الاعمال
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g id="Reply">
+                                    <g>
+                                        <path d="M224,128V0L0,192l224,160V224c203.8,0,288,288,288,288C512,117.2,224,128,224,128z"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        الدفعات المؤجلة
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="user mr-1 ml-3">
+            <span>محمد احمد علي</span>
+            
+            <div class="img">
+                <img src="images/user.jpg" alt="user">
+            </div>
+
+            <ul class="dropdownn">
+                <li>
+                    <a href="#">
+                        <svg x="0px" y="0px" viewBox="0 0 350 350" style="enable-background:new 0 0 350 350;" xml:space="preserve">
+                            <g>
+                                <path d="M175,171.2c38.9,0,70.5-38.3,70.5-85.6C245.5,38.3,235.1,0,175,0s-70.5,38.3-70.5,85.6C104.5,132.9,136.1,171.2,175,171.2z"/>
+                                <path d="M41.9,301.9C41.9,299,41.9,301,41.9,301.9L41.9,301.9z"/>
+                                <path d="M308.1,304.1C308.1,303.3,308.1,298.6,308.1,304.1L308.1,304.1z"/>
+                                <path d="M307.9,298.4c-1.3-82.3-12.1-105.8-94.4-120.7c0,0-11.6,14.8-38.6,14.8s-38.6-14.8-38.6-14.8c-81.4,14.7-92.8,37.8-94.3,118c-0.1,6.5-0.2,6.9-0.2,6.1c0,1.4,0,4.1,0,8.7c0,0,19.6,39.5,133.1,39.5c113.5,0,133.1-39.5,133.1-39.5c0-3,0-5,0-6.4C308.1,304.6,308,303.7,307.9,298.4z"/>
+                            </g>
+                        </svg>
+                        <span>الملف الشخصي</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path d="M269.3,310.2c86.2,0,117.2-86.3,125.3-157.2c10-87.3-31.3-153-125.3-153C175.3,0,134,65.7,144,153C152.1,223.9,183.1,310.2,269.3,310.2z"/>
+                                    <path d="M457.7,346.1c2.8,0,5.5,0.1,8.3,0.2c-4.1-5.9-8.8-11-14.4-15.2c-16.6-12.4-38-16.4-57-23.9c-9.2-3.6-17.5-7.2-25.3-11.3c-26.2,28.7-60.3,43.7-100.1,43.7c-39.7,0-73.9-15-100.1-43.7c-7.8,4.1-16,7.7-25.3,11.3c-19,7.5-40.4,11.5-57,23.9c-28.6,21.4-36,69.5-41.9,102.3c-4.8,27.1-8,54.7-9,82.2c-0.7,21.3,9.8,24.3,27.6,30.7c22.3,8,45.4,14,68.6,18.9c44.8,9.5,91,16.7,136.9,17.1c22.3-0.2,44.6-2,66.8-4.8c-16.4-23.8-26.1-52.6-26.1-83.7C310,412.4,376.3,346.1,457.7,346.1z"/>
+                                    <path d="M457.7,375.7c-65.3,0-118.2,52.9-118.2,118.2S392.4,612,457.7,612s118.2-52.9,118.2-118.2C575.9,428.6,523,375.7,457.7,375.7z M509.4,514.1H478v31.4c0,11.2-9.1,20.3-20.3,20.3c-11.2,0-20.3-9.1-20.3-20.3v-31.4H406c-11.2,0-20.3-9.1-20.3-20.3c0-11.2,9.1-20.3,20.3-20.3h31.4v-31.4c0-11.2,9.1-20.3,20.3-20.3s20.3,9.1,20.3,20.3v31.4h31.4c11.2,0,20.3,9.1,20.3,20.3C529.7,505,520.6,514.1,509.4,514.1z"/>
+                                </g>
+                            </g>
+                        </svg>
+                        <span>اضافة مستخدم جديد</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                            <svg x="0px" y="0px" viewBox="0 0 14.6 14.6" style="enable-background:new 0 0 14.6 14.6;" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path style="fill: red" d="M7.3,14.6c-1.7,0-3.4-0.7-4.6-1.9c-1.2-1.2-1.9-2.9-1.9-4.6s0.7-3.4,1.9-4.6c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4c-0.8,0.9-1.3,2-1.3,3.2s0.5,2.3,1.3,3.2s2,1.3,3.2,1.3s2.3-0.5,3.2-1.3c0.9-0.9,1.3-2,1.3-3.2s-0.5-2.3-1.3-3.2c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0c1.2,1.2,1.9,2.9,1.9,4.6s-0.7,3.4-1.9,4.6C10.7,13.9,9,14.6,7.3,14.6z"/>
+                                    </g>
+                                    <g>
+                                        <path style="fill: red" d="M7.3,7c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v5C8.3,6.6,7.8,7,7.3,7z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                       
+                        <span>تسجيل الخروج</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+</header>
+
+<div class="sm_header"></div>
+
+<!-- sideNav -->
+<div class="side_nav">
+    
+    <ul class="links">
+
+        <!-- <li><a href="#" class="font-weight-bold position-relative rippleria-dark" style="overflow: hidden;">لينك</a></li> -->
+
+        <li>
+            <a href="#" class="font-weight-bold position-relative dropper rippleria-dark">
+
+                <svg x="0px" y="0px" viewBox="0 0 27 27" style="enable-background:new 0 0 27 27;" xml:space="preserve">
+                    <g>
+                        <path d="M3.7,24.9c0,0,0,0.6,0.6,0.6c0.7,0,6.8,0,6.8,0l0-5.6c0,0-0.1-0.9,0.8-0.9h2.8c1.1,0,1,0.9,1,0.9l0,5.6
+                            c0,0,5.8,0,6.7,0c0.7,0,0.7-0.8,0.7-0.8V14.4l-9.4-8.4l-10,8.4C3.7,14.4,3.7,24.9,3.7,24.9z"/>
+                        <path d="M0,13.6c0,0,0.8,1.6,2.7,0l11-9.3l10.3,9.3c2.1,1.5,2.9,0,2.9,0l-13.3-12L0,13.6z"/>
+                        <polygon points="23.8,4.3 21.2,4.3 21.2,7.5 23.8,9.8 	"/>
+                    </g>
+                </svg>
+
+                <span>البيانات الأساسية</span>
+                
+            </a>
+            <ul class="drop_down">
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="font-weight-bold position-relative dropper rippleria-dark">
+
+                <svg x="0px" y="0px" viewBox="0 0 430.1 430.1" style="enable-background:new 0 0 430.1 430.1;" xml:space="preserve">
+                    <g>
+                        <path id="Facebook_Places" d="M356.2,107.1c-1.5-5.7-4.6-11.9-6.9-17.2C321.7,23.7,261.6,0,213.1,0c-65,0-136.6,43.6-146.1,133.4
+                            v18.4c0,0.8,0.3,7.6,0.6,11.1c5.4,42.8,39.1,88.3,64.4,131.1c27.1,45.9,55.3,91,83.2,136.1c17.2-29.4,34.4-59.3,51.2-87.9
+                            c4.6-8.4,9.9-16.8,14.5-24.9c3.1-5.3,8.9-10.7,11.6-15.7c27.1-49.7,70.8-99.8,70.8-149.1v-20.3
+                            C363.2,126.9,356.6,108.2,356.2,107.1z M214.2,199.2c-19.1,0-40-9.6-50.3-35.9c-1.5-4.2-1.4-12.6-1.4-13.4V138
+                            c0-33.6,28.6-48.9,53.4-48.9c30.6,0,54.2,24.5,54.2,55.1C270.1,174.7,244.8,199.2,214.2,199.2z"/>
+                    </g>
+                </svg>
+
+                <span>الدول و المناطق</span>
+            </a>
+            <ul class="drop_down">
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <a href="#" class="font-weight-bold position-relative dropper rippleria-dark">
+                
+                <svg x="0px" y="0px"viewBox="0 0 122.7 122.7" style="enable-background:new 0 0 122.7 122.7;" xml:space="preserve">
+                    <g>
+                        <circle cx="19.5" cy="12.2" r="12.1"/>
+                        <path d="M6,66.7h1.2v24c0,3.3,2.7,6,6,6h12.6c3.3,0,6-2.7,6-6v-1.4c-1.1-2.1-1.8-4.5-1.8-7V50.9c0-6.1,3.7-11.4,9-13.7v-2.4
+                            c0-3.3-2.7-6-6-6H6c-3.3,0-6,2.7-6,6v25.9C0,64,2.6,66.7,6,66.7z"/>
+                        <circle cx="103.3" cy="12.2" r="12.1"/>
+                        <path d="M83.7,34.7v2.4c5.3,2.3,9,7.6,9,13.7v31.3c0,2.5-0.6,4.9-1.8,7v1.4c0,3.3,2.7,6,6,6h12.6c3.3,0,6-2.7,6-6v-24h1.2
+                            c3.3,0,6-2.7,6-6V34.7c0-3.3-2.7-6-6-6h-27C86.4,28.7,83.7,31.4,83.7,34.7z"/>
+                        <path d="M39.1,50.9L39.1,50.9v9.8v21.6c0,3.3,2.7,6,6,6h2.3v28.3c0,3.3,2.7,6,6,6h16.1c3.3,0,6-2.7,6-6V88.2h2.3c3.3,0,6-2.7,6-6
+                            V60.7v-9.8l0,0c0-3.3-2.7-6-6-6H45.1C41.7,44.9,39.1,47.6,39.1,50.9z"/>
+                        <circle cx="61.4" cy="26" r="13.9"/>
+                    </g>
+                </svg>
+                
+                <span>بيانات الموظفين</span>
+            </a>
+            <ul class="drop_down">
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <a href="#" class="font-weight-bold position-relative dropper rippleria-dark">
+
+                <svg x="0px" y="0px" viewBox="0 0 218.6 218.6" style="enable-background:new 0 0 218.6 218.6;" xml:space="preserve">
+                    <path d="M162.2,81.4c-3.4,13-11.3,15.9-15.6,16.5c-2.6,5.2-8.3,15.9-14.1,21.2c-2.3,2.1-5.3,3.9-8.9,5.4c-4.6,1.8-9.4,2.7-14.4,2.7s-9.8-0.9-14.4-2.7c-3.6-1.4-6.6-3.2-8.9-5.4c-5.7-5.4-11.5-16-14.1-21.2c-4.2-0.6-12.2-3.4-15.6-16.5c-1.8-7-1.4-12.6,1.4-16.9c1.2-1.9,2.7-3.1,4-4c0-1.4,0.1-3.1,0.2-5.1c-2.5-3.4-5.8-10.8-1.7-22.7c4.4-12.6,14.3-14.6,19.1-14.7c1.6-3,4.7-7.3,10.2-11.2C95.8,2.4,103.9,0,112.3,0c10.4,0,20.8,3.7,30.2,10.6c15.2,11.2,13.9,36.1,13.5,40.6c0.6,3.8,0.7,7.1,0.7,9.4c1.4,0.9,2.8,2.1,4,4C163.5,68.8,164,74.4,162.2,81.4z M206.7,178.3v35.3c0,2.8-2.2,5-5,5H16.9c-2.8,0-5-2.2-5-5v-35.3c0-14.5,8.7-27.3,22.1-32.6l43.7-17.5c1.3-0.5,2.7-0.5,3.9,0.1c1.2,0.6,2.2,1.6,2.7,2.9l11,30.4l2.2-6.3l-3.5-8.5c-0.6-1.5-0.5-3.3,0.5-4.7s2.5-2.2,4.2-2.2H120c1.7,0,3.2,0.8,4.2,2.2c0.9,1.4,1.1,3.1,0.5,4.7l-3.5,8.5l2.2,6.3l11-30.4c0.5-1.3,1.4-2.3,2.7-2.9c1.2-0.6,2.6-0.6,3.9-0.1l43.7,17.5C198,151,206.7,163.8,206.7,178.3z M180.1,182.1c0-2.8-2.2-5-5-5h-33.6c-2.8,0-5,2.2-5,5v15.6c0,2.8,2.2,5,5,5h33.6c2.8,0,5-2.2,5-5L180.1,182.1L180.1,182.1z"/>
+                </svg>
+
+               <span>إدارة التقييم</span>
+                
+            </a>
+            <ul class="drop_down">
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" class="font-weight-bold position-relative dropper rippleria-dark">
+
+                <svg x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M389.5,87.4c0-12-4.7-23.3-13.2-31.8l-42.4-42.4C325.5,4.8,313.6,0,301.8,0h-2.6v90h90.3L389.5,87.4L389.5,87.4z"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M273.9,309.5c2.9-8.7,7.9-16.8,14.4-23.4L389.9,185v-65H284.5c-8.3,0-14.5-6.7-14.5-15V0H45C20.2,0,0,20.2,0,45v422
+                                c0,24.8,20.2,45,45,45h299.5c24.8,0,45.4-20.2,45.4-45V355l-16.5,16.1c-6.7,6.6-14.5,11.4-23.3,14.4l-47.7,15.9l-7.3,0.4
+                                c-12,0-23.4-5.8-30.4-15.6c-7-9.7-8.9-22.4-5.1-33.8L273.9,309.5z M75,270h149.5c8.3,0,15,6.7,15,15c0,8.3-6.7,15-15,15H75
+                                c-8.3,0-15-6.7-15-15S66.7,270,75,270z M60,225c0-8.3,6.7-15,15-15h149.5c8.3,0,15,6.7,15,15s-6.7,15-15,15H75
+                                C66.7,240,60,233.3,60,225z M60,345c0-8.3,6.7-15,15-15h149.5c8.3,0,15,6.7,15,15c0,8.3-6.7,15-15,15H75C66.7,360,60,353.3,60,345
+                                z M284.5,420c8.3,0,15,6.7,15,15c0,8.3-6.7,15-15,15h-90c-8.3,0-15-6.7-15-15c0-8.3,6.7-15,15-15H284.5z M75,180
+                                c-8.3,0-15-6.7-15-15s6.7-15,15-15h209.5c8.3,0,15,6.7,15,15s-6.7,15-15,15H75z"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M301.1,322.8l-13,39.2c-2,5.9,3.6,11.4,9.5,9.5l39.1-13.1L301.1,322.8z"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M417.6,199.3l-98.8,98.8l42.6,42.6c22.3-22.3,65.8-65.8,98.8-98.8L417.6,199.3z"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <path d="M503.2,156.3c-5.3-5.3-13-8.3-21.3-8.3s-16,3-21.3,8.4l-21.8,21.8l42.6,42.6c11.9-11.9,20.2-20.2,21.8-21.8
+                                C514.9,187.2,514.9,168,503.2,156.3z"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M503.2,198.9C503.2,198.9,503.2,198.9,503.2,198.9C503.3,198.9,503.3,198.8,503.2,198.9
+                                    C503.3,198.8,503.3,198.9,503.2,198.9z"/>
+                                <path d="M503.3,198.8c0,0,0.1-0.1,0.1-0.1C503.4,198.7,503.4,198.8,503.3,198.8z"/>
+                                <path d="M503.4,198.7C503.5,198.6,503.5,198.6,503.4,198.7L503.4,198.7z"/>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+
+                <span>المالية</span>
+                
+            </a>
+            <ul class="drop_down">
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+                <li><a href="#">فرعي</a></li>
+            </ul>
+        </li>
+
+    </ul>
+    
+</div>
+
+<!-- content -->
+<section class="content border container pb-4 mb-4">
+
+    <h4 class="content_header font-weight-bold">فتح طلب تقييم</h4>
+
+    <!-- بيانات الجهة / العميل -->
+
+    <h5 class="secondry_header mb-4">بيانات الجهة / العميل</h5>
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="p-3 col-12 col-sm-12 col-md-6 col-lg-4">
+
+                <h5 class="third_header mb-4">الجهة</h5>
+
+                <div class="info mb-3">
+                    <label class="size-13" for="">اسم الجهة</label>
+                    <input class="form-control" type="text">
+                </div>
+                
+                <div class="info mb-3">
+                    <label class="size-13" for="">مسؤول التواصل</label>
+                    <input class="form-control" type="text">
+                </div>
+                
+                <div class="info mb-3">
+                    <label class="size-13" for="">رقم الجوال</label>
+                    <input class="form-control" type="number">
+                </div>
+                
+                <div class="info mb-3">
+                    <label class="size-13" for="">الايميل</label>
+                    <input class="form-control" type="email">
+                </div>
+
+            </div>
+
+            <div class="p-3 col-12 col-sm-12 col-md-6 col-lg-4">
+
+                <h5 class="third_header mb-4">العميل</h5>
+
+                <div class="info mb-3">
+                    <label class="size-13" for="">اسم العميل</label>
+                    <input class="form-control" type="text">
+                </div>
+
+                <div class="info mb-3">
+                    <label class="size-13" for="">رقم الجوال</label>
+                    <input class="form-control" type="number">
+                </div>
+
+                <div class="info mb-3">
+                    <label class="size-13" for="">الايميل</label>
+                    <input class="form-control" type="email">
+                </div>
+
+            </div>
+
+            <div class="p-3 col-12 col-sm-12 col-md-6 col-lg-4">
+
+                <h5 class="third_header mb-4">مالك العقار</h5>
+
+                <div class="info mb-3">
+                    <label class="size-13" for="">اسم المالك</label>
+                    <input class="form-control" type="text">
+                </div>
+
+                <div class="info mb-3">
+                    <label class="size-13" for="">رقم الجوال</label>
+                    <input class="form-control" type="number">
+                </div>
+
+                <div class="info mb-3">
+                    <label class="size-13" for="">الايميل</label>
+                    <input class="form-control" type="email">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- بيانات العقار -->
+    <div class="byanat_el3akar mb-5">
+
+        <h5 class="secondry_header mb-4">بيانات العقار</h5>
+
+        <div class="row">
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">رقم الصك</label>
+                <input class="form-control" type="number">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">تاريخ الصك</label>
+                <input class="form-control datepicker" type="text"  data-select="datepicker">
+            </div>
+
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">نوع العقار</label>
+                <input class="form-control" type="text">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">رقم المخطط</label>
+                <input class="form-control" type="number">
+            </div>
+            
+            <div class="mb-3 col-12 col-md-8 col-lg-6">
+                <label class="size-13" for="">موقع الGPS</label>
+                <input class="form-control" type="text">
+            </div>
+            
+            <div class="mb-3 col-12 col-md-8 col-lg-6">
+                <label class="size-13" for="">العنوان</label>
+                <input class="form-control" type="text">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">المساحة (م2)</label>
+                <input class="form-control" type="text">
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- بيانات المعاملة -->
+    <div class="byanat_elmo3amla mb-5">
+
+        <h5 class="secondry_header mb-4">بيانات المعاملة</h5>
+
+        <div class="row">
+            
+            <div class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">رقم المعاملة</label>
+                <input class="form-control" type="number">
+            </div>
+            
+            <div class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">مسلسل المعاملة</label>
+                <input class="form-control" type="number">
+            </div>
+            
+            <div class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">تاريخ المعاملة</label>
+                <input class="form-control datepicker" type="text" data-select="datepicker">
+            </div>
+            
+            <div class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-end">
+                <input class="morf8at_elmo3amla" type="file" multiple>
+            </div>
+            
+        </div>
+
+    </div>
+    
+    <!-- بيانات الطلب -->
+    <div class="byanat_eltalab mb-5">
+
+        <h5 class="secondry_header mb-4">بيانات الطلب</h5>
+
+        <div class="row">
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">رقم الطلب</label>
+                <input class="form-control" type="number">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">تاريخ الطلب</label>
+                <input class="form-control datepicker" type="text" data-select="datepicker">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">وقت الطلب</label>
+                <input class="form-control timepicker" type="text">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">نوع الطلب</label>
+                <input class="form-control" type="text">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">وسيلة استلام الطلب</label>
+                <input class="form-control" type="text">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">عدد الوحدات</label>
+                <input class="form-control" type="number">
+            </div>
+            
+            <div class="mb-3 col-12 col-sm-6 col-md-4 col-lg-3">
+                <label class="size-13" for="">المستخدم</label>
+                <input class="form-control" type="text">
+            </div>
+
+            <div class="submit_button mt-4 text-center col-12">
+                <input class="btn btn-info rounded-0 px-5 py-1" type="submit" value="➤ التالي">
+            </div>
+            
+        </div>
+
+    </div>
+    
+</section>
+        
+<!-- jquery -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- ripple -->
+<script src="js/jquery.rippleria.min.js"></script>
+<!-- full screen -->
+<script src="js/screenfull.min.js"></script>
+<!-- datepicker -->
+<script src="assests/datepicker/jquery.datepicker2.min.js"></script>
+<!-- timepicker -->
+<script src="assests/timepicker/mdtimepicker.js"></script>
+
+<!-- main js -->
+<script src="js/main.js"></script>
+    
+</body>
+</html>
