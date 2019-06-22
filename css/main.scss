@@ -590,6 +590,9 @@ body{
 
                 img{
                     width: 100%;
+                    position: relative;
+                    bottom: 35px;
+                    filter: grayscale(58%);
                     transition: 0.5s ease;
                 }
                 

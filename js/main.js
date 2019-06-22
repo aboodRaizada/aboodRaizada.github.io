@@ -78,7 +78,7 @@ $(document).ready(function(){
 
 	
 
-	//remove paticles from sm devices
+	//remove particles from sm devices
 
 	if ( $(document).width() > 700 ) {
 		
