@@ -355,6 +355,7 @@ a.demo--current {
 	background: none;
 	font-weight: bold;
 	color: #fff;
+	text-shadow: 0 0 3px black;
 }
 
 .slidenav__item:focus {
