@@ -700,8 +700,6 @@ body {
 
 .wrapper .overlay .about_me .container img {
   width: 100%;
-  position: relative;
-  bottom: 35px;
   -webkit-filter: grayscale(58%);
           filter: grayscale(58%);
   -webkit-transition: 0.5s ease;
