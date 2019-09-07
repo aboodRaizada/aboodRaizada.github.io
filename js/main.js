@@ -54,7 +54,7 @@ $(document).ready(function(){
 	
 	var typed = new Typed(".typed", {
 		
-		strings: ["ux/ui designer.","quick learner.","creativty = success life.","colors lover"],
+		strings: ["front end angular developer.","ux/ui designer.","quick learner."],
 		typeSpeed:150,
 		backSpeed:50,
 		showCursor:false,
