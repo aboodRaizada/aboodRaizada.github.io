@@ -1,0 +1,326 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "frut";
+  src: url("../fonts/ArbFONTS-Frutiger-LT-Arabic-57-Cn.ttf");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "frut";
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  background-color: #f2f2f2;
+}
+
+.container {
+  padding: 20px 10%;
+}
+
+.container .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.container .logo svg {
+  height: 60px;
+}
+
+.container .logo svg .st0 {
+  display: none;
+}
+
+.container .logo svg .st1 {
+  display: inline;
+}
+
+.container .logo svg .st2 {
+  fill: none;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+
+.container .logo svg .st3 {
+  fill: rgba(223, 122, 94, 0);
+}
+
+.container .logo svg .st4 {
+  fill: none;
+  stroke: #df7960;
+  stroke-width: 30;
+  stroke-miterlimit: 10;
+}
+
+.container .logo svg .st5 {
+  fill: #df7960;
+}
+
+.container .logo span {
+  text-transform: uppercase;
+  font-size: 32px;
+  color: #3c405b;
+}
+
+.container .logo label {
+  color: #e91e63;
+  margin: 0 10px;
+}
+
+.container .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container .form .part {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .container .form .part {
+    width: 100%;
+  }
+}
+
+.container .form .part .form-group {
+  width: 100%;
+  padding: 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 500px) {
+  .container .form .part .form-group {
+    padding: 0;
+  }
+}
+
+.container .form .part .form-group h2 {
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.container .form .part .form-group .add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container .form .part .form-group .add button {
+  border: 0;
+  text-transform: capitalize;
+  font-size: 14px;
+  background-color: #00bcd4;
+  color: #fff;
+  padding: 8px 25px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 24px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.container .form .part .form-group .add button:hover {
+  background-color: #008fa1;
+}
+
+.container .form .part .form-group .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.container .form .part .form-group .items .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1300px) {
+  .container .form .part .form-group .items .item {
+    width: 50%;
+  }
+}
+
+.container .form .part .form-group .items .item .item-name {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .item-name span {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .item-name span:first-of-type {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .item-name span:last-of-type {
+  color: #00bcd4;
+}
+
+.container .form .part .form-group .items .item .quantity {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .quantity span {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .quantity span:first-of-type {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .quantity span:last-of-type {
+  color: #00bcd4;
+}
+
+.container .form .part .form-group .items .item .price {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .price span {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .price span:first-of-type {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .price span:last-of-type {
+  color: #00bcd4;
+}
+
+.container .form .part .form-group .items .item .delete {
+  zoom: 1;
+}
+
+.container .form .part .form-group .items .item .delete button {
+  border: 0;
+  background-color: #e91e63;
+  color: #fff;
+  padding: 3px 15px;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 24px;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.container .form .part .form-group .items .item .delete button:hover {
+  background-color: #c1134e;
+}
+
+.container .form .part .form-group label {
+  text-transform: capitalize;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.container .form .part .form-group input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  padding: 0px 15px;
+  outline: none;
+  border: 1px #bbb solid;
+  border-radius: 24px;
+}
+
+.container .form .part .form-group input:focus {
+  border: 2px #f2cc8e solid;
+}
+
+.container .submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 35px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .submit button {
+  border: 0;
+  text-transform: capitalize;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 8px 50px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 24px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.container .submit button:hover {
+  background-color: #3d8b40;
+}
+/*# sourceMappingURL=main.css.map */
