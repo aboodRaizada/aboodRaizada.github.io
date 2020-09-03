@@ -21,6 +21,94 @@ body {
   background-color: #f2f2f2;
 }
 
+.google-map {
+  position: fixed;
+  z-index: 2;
+  background-color: #000000d4;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 0 30px 0;
+  display: none;
+  -webkit-animation: scaling 0.5s;
+          animation: scaling 0.5s;
+}
+
+.google-map.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.google-map .modal {
+  width: 80%;
+  -webkit-animation: scaling 1s;
+          animation: scaling 1s;
+}
+
+.google-map .modal .header {
+  zoom: 1;
+}
+
+.google-map .modal .header h2 {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.google-map .modal .body {
+  height: 80%;
+}
+
+.google-map .modal .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0;
+}
+
+.google-map .modal .footer .buttons {
+  zoom: 1;
+}
+
+.google-map .modal .footer .buttons button {
+  border: 0;
+  width: 90px;
+  height: 35px;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.google-map .modal .footer .buttons button.submit {
+  background-color: #4caf50;
+}
+
+.google-map .modal .footer .buttons button.submit:hover {
+  background-color: #3d8b40;
+}
+
+.google-map .modal .footer .buttons button.reset {
+  background-color: #df7960;
+}
+
+.google-map .modal .footer .buttons button.reset:hover {
+  background-color: #d65536;
+}
+
 .container {
   padding: 20px 10%;
 }
@@ -322,5 +410,31 @@ body {
 
 .container .submit button:hover {
   background-color: #3d8b40;
+}
+
+@-webkit-keyframes scaling {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaling {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=main.css.map */

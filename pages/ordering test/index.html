@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="fonts/fontawesome/pro.min.css" />
     <link rel="stylesheet" href="scss/main.css" />
   </head>
   <body>
+    <div class="google-map">
+      <div class="modal">
+        <div class="header">
+          <h2>map</h2>
+        </div>
+        <div class="body"></div>
+        <div class="footer">
+          <div class="buttons">
+            <button class="submit">submit</button>
+            <button class="reset">reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <div class="logo">
         <svg
@@ -95,18 +109,20 @@
       <div class="form">
         <div class="part">
           <div class="form-group">
-            <label for="pickupLocationLat">pickup locatation lat</label>
+            <!-- <label for="pickupLocationLat">pickup locatation lat</label> -->
+            <label for="pickupLocationLat">pickup locatation</label>
             <input id="pickupLocationLat" type="text" />
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display: none">
             <label for="pickupLocationLong">pickup locatation long</label>
             <input id="pickupLocationLong" type="text" />
           </div>
           <div class="form-group">
-            <label for="dropLocationLat">drop locatation lat</label>
+            <!-- <label for="dropLocationLat">drop locatation lat</label> -->
+            <label for="dropLocationLat">drop locatation</label>
             <input id="dropLocationLat" type="text" />
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display: none">
             <label for="dropLocationLong">drop locatation lat</label>
             <input id="dropLocationLong" type="text" />
           </div>
@@ -150,7 +166,12 @@
       </div>
     </div>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS3p_2kXFbB5EugDvG10dzXrCtRSsMJMQ&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script src="js/sweetalert.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

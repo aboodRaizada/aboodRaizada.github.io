@@ -38,6 +38,81 @@ body {
   background-color: $body-bg;
 }
 
+.google-map {
+  position: fixed;
+  z-index: 2;
+  background-color: #000000d4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 30px 0;
+  display: none;
+  animation: scaling 0.5s;
+
+  &.show {
+    display: flex;
+  }
+
+  .modal {
+    width: 80%;
+    animation: scaling 1s;
+
+    .header {
+      zoom: 1;
+
+      h2 {
+        margin: 0;
+        color: #fff;
+        text-align: center;
+        text-transform: capitalize;
+      }
+    }
+
+    .body {
+      height: 80%;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+
+      .buttons {
+        zoom: 1;
+
+        button {
+          border: 0;
+          width: 90px;
+          height: 35px;
+          font-size: 14px;
+          text-transform: capitalize;
+          color: #fff;
+          cursor: pointer;
+          outline: none;
+          transition: 0.3s;
+
+          &.submit {
+            background-color: $success;
+
+            &:hover {
+              background-color: darken($success, 10%);
+            }
+          }
+
+          &.reset {
+            background-color: $primary-color;
+
+            &:hover {
+              background-color: darken($primary-color, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .container {
   padding: 20px 10%;
 
@@ -277,5 +352,16 @@ body {
         background-color: darken($success, 10%);
       }
     }
+  }
+}
+
+@keyframes scaling {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

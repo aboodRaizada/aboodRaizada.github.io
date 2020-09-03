@@ -1,5 +1,7 @@
 /*
 
+AIzaSyDS3p_2kXFbB5EugDvG10dzXrCtRSsMJMQ // api key
+
 {
     "AgentId":"1",
     "PickupLocationLat":"30.009959",
@@ -51,10 +53,22 @@ let pickupLocationLatElement = document.getElementById("pickupLocationLat"),
   quantityElement = document.getElementById("quantity"),
   priceElement = document.getElementById("price"),
   addButton = document.getElementById("add"),
-  submitButton = document.getElementById("submit");
+  submitButton = document.getElementById("submit"),
+  mapSubmitButton = document.querySelector(".footer .submit"),
+  mapResetButton = document.querySelector(".footer .reset"),
+  googleMapModal = document.querySelector(".google-map");
+
+document.querySelector(".modal").onclick = function (e) {
+  e.stopPropagation();
+};
 
 // items container
 let itemsElements = document.querySelector(".items");
+
+googleMapModal.onclick = function (e) {
+  googleMapModal.classList.remove("show");
+  resetMap();
+};
 
 function renderingOrdersArrary() {
   itemsElements.innerHTML = "";
@@ -156,6 +170,26 @@ addButton.onclick = () => {
   add();
 };
 
+pickupLocationLatElement.onfocus = function () {
+  this.blur();
+  googleMapModal.classList.add("show");
+};
+
+pickupLocationLongElement.onfocus = function () {
+  this.blur();
+  googleMapModal.classList.add("show");
+};
+
+dropLocationLatElement.onfocus = function () {
+  this.blur();
+  googleMapModal.classList.add("show");
+};
+
+dropLocationLongElement.onfocus = function () {
+  this.blur();
+  googleMapModal.classList.add("show");
+};
+
 priceElement.onkeyup = (e) => {
   if (e.keyCode === 13) {
     add();
@@ -226,3 +260,58 @@ function submit() {
 submitButton.onclick = () => {
   submit();
 };
+
+let from, to;
+
+function initMap() {
+  map = new google.maps.Map(document.querySelector(".body"), {
+    center: {
+      lat: 24.68928192164635,
+      lng: 46.63686959730997,
+    },
+    zoom: 5,
+  });
+
+  google.maps.event.addListener(map, "click", function (event) {
+    let cord = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+
+    if (!from) {
+      from = cord;
+      addMarker(cord);
+    } else if (!to) {
+      to = cord;
+      addMarker(
+        cord,
+        "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"
+      );
+    }
+  });
+}
+
+function addMarker(cord, icon) {
+  let marker = new google.maps.Marker({
+    position: cord,
+    map,
+    icon: icon ? icon : null,
+  });
+}
+
+mapResetButton.onclick = resetMap;
+
+function resetMap() {
+  from = undefined;
+  to = undefined;
+
+  initMap();
+}
+
+mapSubmitButton.onclick = mapSubmit;
+
+function mapSubmit() {
+  pickupLocationLatElement.value = from.lat;
+  pickupLocationLongElement.value = from.lng;
+  dropLocationLatElement.value = to.lat;
+  dropLocationLongElement.value = to.lng;
+
+  googleMapModal.click();
+}
